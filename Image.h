@@ -3,9 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <exception>
 #include <algorithm>
-
 using namespace std;
 class Image{
 public:
@@ -14,11 +12,7 @@ public:
 
 	Image(): width(0), height(0){}
 	Image(int width, int height, vector <Pixel> pixels): width(width), height(height), pixels(pixels){}
-	Image(int width, int height)
-	{
-		throw std::exception("not implemented");//todo: sdelat
-	}
-	Image(const Image& img): width(img.width), height(img.height), pixels(img.pixels){}
+    Image(const Image& im): width(im.width), height(im.height), pixels(im.pixels){}
 
 	Image(string filename)
 	{
