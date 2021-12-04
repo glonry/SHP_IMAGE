@@ -1,4 +1,5 @@
 #include "Image.h"
+
 class Converter{
 public:
 	static Image toGRAY(const Image& im){
@@ -6,10 +7,11 @@ public:
 		for(auto p:im.pixels)
 		{
 			unsigned char md=(p.getColor().R+p.getColor().G+p.getColor().B)/3;
-			Color md (md,md,md,p.getColor().A)
-			im_gr.setPixel(md,p.getX(), p.getY());
+			Color gr(md,md,md,p.getColor().A);
+			im_gr.setPixel(gr,p.getX(), p.getY());
 		}
-		return im_gr
+		return im_gr;
 	}
 	
 }
+
